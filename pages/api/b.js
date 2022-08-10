@@ -221,7 +221,7 @@ export default async function handler(req, res) {
     const { query } = req;
     const users = JSON.parse(query.users)
     let image = finalRender(users)
-    setTimeout(()=>{
+    setTimeout(async()=>{
         res.setHeader('Content-Type', 'image/png')
         res.send(await image.getBufferAsync(Jimp.MIME_PNG)) 
     }, 5000)

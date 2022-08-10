@@ -224,5 +224,5 @@ export default async function handler(req, res) {
     setTimeout(async()=>{
         res.setHeader('Content-Type', 'image/png')
         res.send(await image.getBufferAsync(Jimp.MIME_PNG)) 
-    }, 5000)
+    }, query.delay)
 }
